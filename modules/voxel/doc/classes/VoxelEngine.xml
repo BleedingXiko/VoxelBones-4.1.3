@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<class name="VoxelEngine" inherits="Object" version="4.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../doc/class.xsd">
+	<brief_description>
+		Singleton holding common settings and handling voxel processing tasks in background threads.
+	</brief_description>
+	<description>
+	</description>
+	<tutorials>
+	</tutorials>
+	<methods>
+		<method name="get_stats" qualifiers="const">
+			<return type="Dictionary" />
+			<description>
+				Gets debug information about shared voxel processing.
+				The returned dictionary has the following structure:
+				[codeblock]
+				{
+					"thread_pools": {
+						"general": {
+							"tasks": int,
+							"active_threads": int,
+							"thread_count": int
+						}
+					},
+					"tasks": {
+						"streaming": int,
+						"meshing": int,
+						"generation": int,
+						"main_thread": int
+					},
+					"memory_pools": {
+						"voxel_used": int,
+						"voxel_total": int,
+						"block_count": int
+					}
+				}
+				[/codeblock]
+			</description>
+		</method>
+	</methods>
+</class>
